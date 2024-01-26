@@ -1,4 +1,4 @@
-var getSong = require('../spotify.js');
+var getSong = require('../API/spotify.js');
 const path = require('path');
 const express = require('express');
 const route = express.Router();
