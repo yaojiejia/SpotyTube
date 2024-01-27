@@ -1,4 +1,5 @@
 var getSong = require('../API/spotify.js');
+var getVideo = require('../API/Youtube.js');
 const path = require('path');
 const express = require('express');
 const route = express.Router();
@@ -14,8 +15,18 @@ route.get('/', (req, res, next) => {
 route.post('/submit', (req, res, next) => {
     const userResponse = req.body.userResponse;
     getSong(userResponse)
-    .then(song => {
-        console.log(song);
+    .then(songs => {
+        songs.forEach(song => {
+            getVideo(song)
+            .then(videoLink => {
+                if (videoLink) {
+                    console.log(videoLink);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+        });
   })
     .catch(error => {
         console.error('Error:', error.message);
