@@ -20,7 +20,7 @@ route.post('/submit', (req, res, next) => {
             getVideo(song)
             .then(videoLink => {
                 if (videoLink) {
-                    console.log(videoLink);
+                    console.log(song, + " "+ videoLink);
                 }
             })
             .catch(error => {

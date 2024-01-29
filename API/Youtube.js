@@ -1,5 +1,5 @@
 const { google } = require('googleapis');
-const API_KEY = 'AIzaSyBxaXwd3cOTnuf0Ex5o5VARHE0nKQBXzdk'; // Replace with your actual API key
+const API_KEY = 'AIzaSyC0uWf86rqWERMw9Nzp-TfEnu1xok9zK4E'; // Replace with your actual API key
 
 const searchYouTube = async(query) =>{
   const youtube = google.youtube({
